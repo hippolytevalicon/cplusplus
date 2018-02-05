@@ -3,21 +3,29 @@
 
 #ifndef MY_HEADER_HPP
 #define MY_HEADER_HPP
-void exo2(void)
+
+#include <stdlib.h>
+#include <time.h>
+#include <my_header.hpp>
+
+int essayer_code(unsigned short code)
 {
-	long n = 3, fac = 1, i = 1;
+	srand(time(NULL));
+	static unsigned short guess = rand() % 10000;
 
-	if (n > 0)
-		while (i <= n)
-		{
-			fac = fac * i;
-			i = i + 1;
-		}
+	return (code == guess);
+}
 
-	else
 
-		if (n < 0)
-			fac = 0;
+void exo3(void)
+{
+	long x = 7845, n = 0, T = 0;
+
+	while (n != x)
+	{
+		T = essayer_code(n);
+		n = n + 1;
+	}
 }
 
 
