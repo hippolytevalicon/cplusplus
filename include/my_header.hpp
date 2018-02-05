@@ -6,25 +6,30 @@
 
 #include <stdlib.h>
 #include <time.h>
-#include <my_header.hpp>
 
-int essayer_code(unsigned short code)
+unsigned short lancer_de()
 {
 	srand(time(NULL));
-	static unsigned short guess = rand() % 10000;
-
-	return (code == guess);
+	return (rand() % 6) + 1;
 }
 
 
-void exo3(void)
+void exo4(void)
 {
-	long x = 7845, n = 0, T = 0;
+	long a = 0, b = 0, c = 0;
 
-	while (n != x)
+	while (a != 1)
 	{
-		T = essayer_code(n);
-		n = n + 1;
+		a = lancer_de();
+		if ((a == 2) || (a == 4) || (a == 6))
+			b = b + a;
+		else
+			if (a == 3)
+				b = b * 2;
+			else
+				b = 0;
+	
+
 	}
 }
 
